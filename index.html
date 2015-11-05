@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Waitstaff Calculator</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<section class="main-content">
+		<h1>Waitstaff Calculator</h1>
+		<section class="details">
+			<h1>Enter the Meal Details</h1>
+			<form name="waitForm">
+				<div class="labels">
+					<label for="price">Base Meal Price: $</label>
+					<label for="tax">Tax Rate: %</label>
+					<label for="percentage">Tip Percentage: %</label>
+				</div>
+				<div class="inputs">
+					<input type="number" name="price"><br>
+					<input type="number" name="tax"><br>
+					<input type="number" name="percentage"><br>
+				</div>
+				<div class="form-controls">
+					<input type="submit">
+					<button>Cancel</button>
+				</div>	
+			</form>
+		</section>
+		<section class="calculations">
+			<section class="charges">
+				<h1>Customer Charges</h1>
+				<div class="charges-info">
+					<p>Subtotal: 0.00</p>
+					<p>Tip: 0.00</p>
+					<hr>
+					<p>Total: 0.00</p>
+				</div>
+			</section>
+			<section class="earnings">
+				<h1>My Earnings Info</h1>
+				<div class="earnings-info">
+					<p>Tip Total: 0.00</p>
+					<p>Meal Count: 0</p>
+					<p>Average Tip Per Meal: 0.00</p>
+				</div>
+			</section>
+		</section>
+	</section>
+	<aside>
+		<button>Reset</button>
+	</aside>
+</body>
+</html>
