@@ -24,14 +24,10 @@ angular.module('waitstaff', [])
 			$scope.averageTip = $scope.tipTotal/$scope.mealCount;
 		}
 
-		$scope.cancel = function() {
+		$scope.reset = function() {
 			$scope.price = ""; 
 			$scope.taxRate = ""; 
 			$scope.tip = "";
-		}
-
-		$scope.reset = function() {
-			$scope.cancel();
 			$scope.subTotal = 0.00;
 			$scope.displayTip = 0;
 			$scope.total = 0.00;

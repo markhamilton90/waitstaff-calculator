@@ -511,7 +511,7 @@ aside {
   margin-top: 7rem;
 }
 
-.form-controls > input[type="submit"] {
+.form-controls > button[type="submit"] {
   margin-right: .27rem;
 }
 
@@ -534,7 +534,7 @@ input[name="percentage"] {
 }
 
 .charges-info {
-  width: 8rem;
+  width: 11rem;
   padding-left: 15px;
   text-align: right;
 }
@@ -564,6 +564,10 @@ input[name="percentage"] {
   padding: 0 0 10px 15px;
   border-bottom: 2px solid black;
   margin: 10px 0;
+}
+
+.details > h1 {
+  margin: 10px 0 20px;
 }
 
 
