@@ -17,15 +17,16 @@
 					<label for="price">Base Meal Price: $</label>
 					<label for="tax">Tax Rate: %</label>
 					<label for="percentage">Tip Percentage: %</label>
+					<span ng-if="waitForm.$submitted && waitForm.$invalid">*Please enter all inputs!</span>
 				</div>
 				<div class="inputs">
-					<input type="text" name="price" ng-model="price" ng-pattern="/\d+(\.\d{1,2})?/" required><br>
+					<input type="number" name="price" ng-model="price" required><br>
 					<input type="number" name="tax" ng-model="taxRate" required><br>
 					<input type="number" name="percentage" ng-model="tip" required><br>
 				</div>
 				<div class="form-controls">
 					<button type="submit">Submit</button>
-					<button type="reset">Cancel</button>
+					<button type="reset" ng-click="cancel()">Cancel</button>
 				</div>	
 			</form>
 		</section>
@@ -33,18 +34,23 @@
 			<section class="charges">
 				<h1>Customer Charges</h1>
 				<div class="charges-info">
-					<p>Subtotal: {{ subTotal | currency: $ }}</p>
-					<p>Tip: {{ displayTip | currency: $ }}</p>
+					<p>Subtotal: {{ subTotal | currency : $ }}</p>
+					<p>Tip: {{ displayTip | currency : $ }}</p>
 					<hr>
-					<p>Total: {{ total | currency: $ }}</p>
+					<p>Total: {{ total | currency : $ }}</p>
 				</div>
 			</section>
 			<section class="earnings">
 				<h1>My Earnings Info</h1>
 				<div class="earnings-info">
-					<p>Tip Total: {{ tipTotal }}</p>
-					<p>Meal Count: {{ mealCount }}</p>
-					<p>Average Tip Per Meal: {{ averageTip }}</p>
+					<p>Tip Total: </p>
+					<p>Meal Count: </p>
+					<p>Average Tip Per Meal: </p>
+				</div>
+				<div class="earnings-data">
+					<p>{{ tipTotal | currency : $ }}</p>
+					<p>{{ mealCount }}</p>
+					<p>{{ averageTip | currency : $ }}</p>
 				</div>
 			</section>
 		</section>

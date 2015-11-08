@@ -476,7 +476,7 @@ aside {
   margin-right: 3rem;
   width: 380px;
   height: 420px;
-  border: 2px solid black;
+  border: 3px solid black;
   vertical-align: top;
 }
 
@@ -520,6 +520,10 @@ input[name="percentage"] {
   width: 40px;
 }
 
+.details span {
+  color: tomato;
+}
+
 
 
 .calculations {
@@ -527,34 +531,37 @@ input[name="percentage"] {
 }
 
 .charges {
-  width: 300px;
+  width: 340px;
   height: 195px;
-  border: 2px solid black;
+  border: 3px solid black;
   vertical-align: top; 
 }
 
 .charges-info {
-  width: 11rem;
-  padding-left: 15px;
+  width: 12rem;
+  padding-left: 20px;
   text-align: right;
 }
 
 .earnings {
-  width: 300px;
+  width: 340px;
   height: 195px;
-  border: 2px solid black;
+  border: 3px solid black;
   margin-top: 30px;
   vertical-align: bottom;
 }
 
 .earnings-info {
-  padding-left: 5px;
-  width: 12.8rem;
+  display: inline-block;
+  width: 55%;
   text-align: right;
 }
 
-.earnings-info p:first-child + p {
-  padding-right: 22.25px;
+.earnings-data {
+  display: inline-block;
+  width: 40%;
+  text-align: left;
+  vertical-align: top;
 }
 
 .details > h1,
