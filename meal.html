@@ -1,0 +1,31 @@
+<section class="details">
+	<h1>Enter the Meal Details</h1>
+	<form name="waitForm" novalidate ng-submit="waitForm.$valid && submit()">
+		<div class="labels">
+			<label for="price">Base Meal Price: $</label>
+			<label for="tax">Tax Rate: %</label>
+			<label for="percentage">Tip Percentage: %</label>
+			<span ng-if="waitForm.$submitted && waitForm.$invalid">*Please enter all inputs!</span>
+		</div>
+		<div class="inputs">
+			<input type="number" name="price" ng-model="price" required><br>
+			<input type="number" name="tax" ng-model="taxRate" required><br>
+			<input type="number" name="percentage" ng-model="tip" required><br>
+		</div>
+		<div class="form-controls">
+			<button type="submit">Submit</button>
+			<button type="reset" ng-click="cancel()">Cancel</button>
+		</div>	
+	</form>
+</section>
+<section class="calculations">
+	<section class="charges">
+		<h1>Customer Charges</h1>
+		<div class="charges-info">
+			<p>Subtotal: {{ subTotal | currency : $ }}</p>
+			<p>Tip: {{ displayTip | currency : $ }}</p>
+			<hr>
+			<p>Total: {{ total | currency : $ }}</p>
+		</div>
+	</section>
+</section>

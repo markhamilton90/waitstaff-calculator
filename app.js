@@ -1,43 +1,58 @@
 
-angular.module('waitstaff', [])
-	.controller('waitstaffController', function($scope) {
+angular.module('waitstaff', ['ngRoute'])
+	.config(function($routeProvider) {
+		$routeProvider.when('/', {
+			templateUrl : 'home.html'
+		}).when('/meal', {
+			templateUrl : 'meal.html',
+			controller : 'MealCtrl'
+		}).when('/earnings', {
+			templateUrl : 'earnings.html',
+			controller : 'MealCtrl'
+		});
+	})
+	.run(function($rootScope) {
+		$rootScope.price;
+		$rootScope.taxRate;
+		$rootScope.tip;
 
-		$scope.price;
-		$scope.taxRate;
-		$scope.tip;
+		$rootScope.subTotal = 0;
+		$rootScope.displayTip = 0;
+		$rootScope.total = 0;
 
-		$scope.subTotal = 0;
-		$scope.displayTip = 0;
-		$scope.total = 0;
-
-		$scope.tipTotal = 0;
-		$scope.mealCount = 0;
-		$scope.averageTip = 0;
+		$rootScope.tipTotal = 0;
+		$rootScope.mealCount = 0;
+		$rootScope.averageTip = 0;
+	})
+	.controller('MealCtrl', function($scope, $rootScope) {
 
 		$scope.submit = function() {
-			$scope.subTotal = $scope.price + ($scope.taxRate/100 * $scope.price);
-			$scope.displayTip = ($scope.tip/100) * $scope.subTotal;
-			$scope.total = $scope.subTotal + $scope.displayTip;
+			$rootScope.price = $scope.price;
+			$rootScope.taxRate = $scope.taxRate;
+			$rootScope.tip = $scope.tip;
+			$rootScope.subTotal = $rootScope.price + ($rootScope.taxRate/100 * $rootScope.price);
+			$rootScope.displayTip = ($rootScope.tip/100) * $rootScope.subTotal;
+			$rootScope.total = $rootScope.subTotal + $rootScope.displayTip;
 
-			$scope.tipTotal += $scope.tip/100 * $scope.subTotal;
-			$scope.mealCount++;
-			$scope.averageTip = $scope.tipTotal/$scope.mealCount;
+			$rootScope.tipTotal += $rootScope.tip/100 * $rootScope.subTotal;
+			$rootScope.mealCount++;
+			$rootScope.averageTip = $rootScope.tipTotal/$rootScope.mealCount;
 		}
 
 		$scope.cancel = function() {
-			$scope.waitForm.$submitted = false;
-			$scope.price = ""; 
-			$scope.taxRate = ""; 
-			$scope.tip = "";
+			$rootScope.price = ""; 
+			$rootScope.taxRate = ""; 
+			$rootScope.tip = "";
 		}
 
 		$scope.reset = function() {
 			$scope.cancel();
-			$scope.subTotal = 0;
-			$scope.displayTip = 0;
-			$scope.total = 0;
-			$scope.tipTotal = 0;
-			$scope.mealCount = 0;
-			$scope.averageTip = 0;
+			$rootScope.subTotal = 0;
+			$rootScope.displayTip = 0;
+			$rootScope.total = 0;
+			$rootScope.tipTotal = 0;
+			$rootScope.mealCount = 0;
+			$rootScope.averageTip = 0;
 		}
-	})
+
+	});

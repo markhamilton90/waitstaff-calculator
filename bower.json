@@ -1,0 +1,22 @@
+{
+  "name": "waitstaff-calculator",
+  "homepage": "https://github.com/markhamilton90/waitstaff-calculator",
+  "authors": [
+    "markhamilton90 <msh387@gmail.com>"
+  ],
+  "description": "calculate cost of a meal",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8"
+  }
+}
