@@ -9,7 +9,7 @@ angular.module('waitstaff', ['ngRoute'])
 		}).when('/earnings', {
 			templateUrl : 'earnings.html',
 			controller : 'MealCtrl'
-		});
+		}).otherwise('/');
 	})
 	.run(function($rootScope) {
 		$rootScope.price;
