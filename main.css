@@ -593,6 +593,20 @@ input[name="percentage"] {
 
 
 
+.animate-view.ng-enter {
+  transition: 0.5s linear all;
+  position: relative;
+  left: -1em;
+  opacity: 0;
+}
+
+.animate-view.ng-enter.ng-enter-active {
+  left: 0;
+  opacity: 1;
+}
+
+
+
 
 
 

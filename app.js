@@ -1,5 +1,5 @@
 
-angular.module('waitstaff', ['ngRoute'])
+angular.module('waitstaff', ['ngRoute', 'ngAnimate'])
 	.config(function($routeProvider) {
 		$routeProvider.when('/', {
 			templateUrl : 'home.html'
